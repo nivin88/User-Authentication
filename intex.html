@@ -8,27 +8,32 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    
-  
+    <div class="loginform">
+       <form id="form">
+           <div class="input-one">
+               <h2> <i id="icon" class='bx bxs-user-circle'></i></h2>
+               <h1>Wellcome</h1>
+               <div class="input-one">
+               <label for=""> <i class='bx bxs-user'></i>UserName:</label>
+               <input type="text" id="name" placeholder="Enter Name" />
+               <p id="nameerror" style="color: red;"></p>
+           </div>
+           <div class="input-one">
+               <label for="password"><i class='bx bxs-lock'></i>Password:</label>
+               <input type="password" id="password" placeholder="Enter Password"/>
+              
+               <p id="passworderror" style="color: red;"></p>
+               <a href="#" class="forgot-password">Forgot Password?</a>
 
-<form id="form">
-    <div>
-        <h2> <i id="icon" class='bx bxs-user-circle'></i></h2>
-        <h1>Log in</h1>
-        <label for="">UserName:</label><br><br>
-        <input type="text" id="name" placeholder="Enter Name" />
-        <p id="nameerror" style="color: red;"></p>
+           </div>
+           <div class="button1">
+               <button type="button" onclick="validateForm()">Login</button>
+               
+           </div>
+       </form>
     </div>
-    <div>
-        <label for="password">Password:</label><br><br>
-        <input type="password" id="password" placeholder="Enter Password"/>
-        <p id="passworderror" style="color: red;"></p>
-    </div>
-    <button type="button" onclick="validateForm()">Login</button>
-</form>
-
-
-
+   
+   
     <script src="intex.JS"></script>
 </body>
 </html>

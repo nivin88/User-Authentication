@@ -39,7 +39,7 @@ function validateForm() {
         .then(response => response.json())
         .then(data => {
             console.log('Success:', data);
-            alert("Login successful! .");
+            alert("Login successful!");
         })
     }
 }
