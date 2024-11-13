@@ -11,10 +11,11 @@
     flex-direction: column;
 }
 form{
-    width: 320px;
+    width: 350px;
     background-color: white;
     border: 1px solid rgb(103, 102, 102);
-    padding: 25px;
+    padding: 22px;
+    /* justify-content: space-around; */
     margin: 20vh;
     border-radius: 1ch; 
  
@@ -22,7 +23,7 @@ form{
  .input-one{
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 5px;
 
 } 
 .input-one input{
@@ -51,7 +52,7 @@ h1{
 button{
     display: flex;
     justify-content: center; 
-    width: 25%;
+    width: 100%;
     padding: 10px;
     color: white;
     /* margin-bottom: 20px; */
@@ -67,11 +68,38 @@ button:hover{
 .forgot-password {
     display: flex;
     justify-content: end;
-    /* margin-top: 10px; */
+    /* margin-top: -10px; */
+    /* padding-top: -100px; */
     color: #0c0c0d;
     text-decoration: none;
 }
 
-.forgot-password:hover {
+/* .forgot-password:hover {
     text-decoration: underline;
+} */
+
+.modal{
+  /* display:flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1px; */
+  width: 350px;
+    background-color: white;
+    border: 1px solid rgb(103, 102, 102);
+    padding: 22px;
+    /* justify-content: space-around; */
+    margin: 20vh;
+    border-radius: 1ch; 
+}
+.otpp{
+  display: flex;
+  font-size: 20px;
+}
+#otpModal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  margin-top: 0px;
+  /* background-color: #0c0c0d; */
 }

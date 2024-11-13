@@ -7,31 +7,52 @@
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body>
-    <div class="loginform">
-       <form id="form">
-           <div class="input-one">
-               <h2> <i id="icon" class='bx bxs-user-circle'></i></h2>
-               <h1>Wellcome</h1>
-               <div class="input-one">
-               <label for=""> <i class='bx bxs-user'></i>UserName:</label>
-               <input type="text" id="name" placeholder="Enter Name" />
-               <p id="nameerror" style="color: red;"></p>
-           </div>
-           <div class="input-one">
-               <label for="password"><i class='bx bxs-lock'></i>Password:</label>
-               <input type="password" id="password" placeholder="Enter Password"/>
-              
-               <p id="passworderror" style="color: red;"></p>
-               <a href="#" class="forgot-password">Forgot Password?</a>
+<body>  
+<div class="loginform">
+    <form id="form" class="shadow">
+        <h2><i id="icon" class='bx bxs-user-circle'></i></h2>
+        <h1 class="welcome">Welcome</h1>
+        
+        <div class="input-one">
+            <label for="name"><i class='bx bxs-user'></i>UserName:</label>
+            <input type="text" id="name" placeholder="Enter Name">
+            <p id="nameerror" style="color: red;"></p>
+        </div>
+        
+        <div class="input-one">
+            <label for="password"><i class='bx bxs-lock'></i>Password:</label>
+            <input type="password" id="password" placeholder="Enter Password"/>
+            <p id="passworderror" style="color: red;"></p>
+        </div>
+        <div class="checkbox mt-3">
+          <input type="checkbox" style="accent-color: rgb(19, 222, 29); margin-top: 6px; cursor: pointer;" class="check" 
+        id="showPassword"> Show Password
+        <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+        
+        <div class="button1">
+            <button type="button" class="login" onclick="validateForm(event)">Login</button>
+        </div>
+    </form>
+</div>
 
-           </div>
-           <div class="button1">
-               <button type="button" onclick="validateForm()">Login</button>
-               
-           </div>
-       </form>
+<div id="otpModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeOtpModal()">&times;</span>
+        <h2 class="otpp">OTP Verification</h2>
+        <p>We've sent an OTP to your registered phone number. Please enter it below:</p>
+        <div>
+            <span id="otpPrefix"> </span>
+            <input type="text" id="otpInput" maxlength="5" required>
+        </div>
+        <p  id="timer">02:00</p>
+        <button id="resendOtp" onclick="resendOtp()">Resend OTP</button>
     </div>
+</div>
+
+    
+
+
    
    
     <script src="intex.JS"></script>
