@@ -88,7 +88,7 @@ function resendOtp() {
     const accessCode = localStorage.getItem('accessCode');
 
     if (opaque && accessCode) {
-        sendOtp({ opaque, accessCode });
+        resendOtp({ opaque, accessCode });
     } else {
         alert("Required data is missing. Please log in again.");
     }
@@ -107,7 +107,7 @@ async function sendOtp(data) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${jwtToken}`,
+                'Authorization': `BslogiKey ${jwtToken}`,
             },
             body: JSON.stringify(data),
         });
@@ -126,5 +126,72 @@ async function sendOtp(data) {
         alert("There was an error validating the OTP.");
     }
 }
+
+document.getElementById('showPassword').addEventListener('change', function() {
+    const passwordField = document.getElementById('password');
+    passwordField.type = this.checked ? 'text' : 'password';
+});
+
+let countdownInterval;
+
+function showOtpModal() {
+    document.getElementById('otpModal').style.display = 'block';
+    const opaque = localStorage.getItem('opaque');
+    const accessCode = localStorage.getItem('accessCode');
+    document.getElementById('otpPrefix').textContent = opaque || "N/A";
+    document.getElementById('otpInput').value = accessCode || "";
+
+    // Start the timer for 1 minute (60 seconds)
+    startTimer(60);
+}
+
+function closeOtpModal() {
+    document.getElementById('otpModal').style.display = 'none';
+    clearInterval(countdownInterval); // Stop the timer when modal closes
+}
+
+function startTimer(duration) {
+    let timer = duration;
+    const timerElement = document.getElementById('timer');
+    
+    // Clear any previous intervals to avoid multiple timers running at once
+    clearInterval(countdownInterval);
+
+    countdownInterval = setInterval(() => {
+        const minutes = Math.floor(timer / 60);
+        const seconds = timer % 60;
+
+        // Display timer in "MM:SS" format
+        timerElement.textContent = 
+            `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+        // Check if the timer has reached zero
+        if (timer <= 0) {
+            clearInterval(countdownInterval);
+            alert("OTP expired. Please request a new OTP.");
+        } else {
+            timer--; // Decrement the timer
+        }
+    }, 1000); // Run every second
+}
+
+function resendOtp() {
+    const opaque = localStorage.getItem('opaque');
+    const accessCode = localStorage.getItem('accessCode');
+
+    if (opaque && accessCode) {
+        sendOtp({ opaque, accessCode });
+        startTimer(60); // Reset the timer to 1 minute when OTP is resent
+    } else {
+        alert("Required data is missing. Please log in again.");
+    }
+}
+// function.
+
+
+   
+    
+
+// function
 
 

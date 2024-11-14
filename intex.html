@@ -37,18 +37,33 @@
 </div>
 
 <div id="otpModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeOtpModal()">&times;</span>
-        <h2 class="otpp">OTP Verification</h2>
-        <p>We've sent an OTP to your registered phone number. Please enter it below:</p>
-        <div>
-            <span id="otpPrefix"> </span>
-            <input type="text" id="otpInput" maxlength="5" required>
-        </div>
-        <p  id="timer">02:00</p>
-        <button id="resendOtp" onclick="resendOtp()">Resend OTP</button>
-    </div>
+  <div class="modal-content">
+      <span class="close" onclick="closeOtpModal()">&times;</span>
+      <h2 class="otpp">OTP Verification</h2>
+      <p>We've sent an OTP to your registered phone number. Please enter it below:</p>
+      <div>
+          <span id="otpPrefix"> </span>
+          <input type="text" id="otpInput" maxlength="5" required>
+      </div>
+      <p id="timer">01:00</p> <!-- Timer display -->
+      <p class="reset">Reset OTP</p>
+      <button id="resendOtp" onclick="resendOtp()">submit</button>
+  </div>
 </div>
+
+<!-- <div class="table-first">
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Password</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table> -->
+
 
     
 
