@@ -3,9 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vendor Page</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <h1>kjhbgvc</h1>
+    <div id="table1" class="mb-5 ">
+        <table class="table table-bordered table-hover" style="text-align: center;">
+            <div class="parent">
+                <div class="d-flex mt-2 me-2">
+                    <i class='bx bx-user fs-2'></i>
+                    <h4 id="userName"class="mt-1"></h4>
+                </div>
+            </div>
+            <div class="user d-flex mb-3" style="justify-content: space-between;">
+                <h3 class=" fw-bold heading ms-3">Vendor Details</h3>
+                <button class="addbutton me-2" onclick="addButton()">Add vendor</button>
+            </div>
+            <div>
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>NAME</th>
+                        <th>VENDOR CODE</th>
+                        <th>TYPE</th>
+                        <th>ADDRESS</th>
+                        <th>COUNTRY</th>
+                        <th>STATUS</th>
+                        <th>ACTION</th>
+                    </tr>
+                </thead>
+                <tbody id="table2"></tbody>
+        </table>
+    </div>
+    <script src="demo.js"></script>
 </body>
 </html>

@@ -138,11 +138,17 @@ button:hover{
     margin-bottom: 20px;
 
 }
+.table-first{
+    display: grid;
+    /* justify-content:space-evenly; */
+
+}
   
 
-  /* table,td,tr,th{ 
-    border: 2px solid gray;
+  table,td,tr,th{ 
+    border: 2px solid rgb(89, 202, 101);
     border-collapse: collapse;
+    background-color: rgb(89, 202, 101);
     padding: 1rem ;
 }
 th{
@@ -150,31 +156,5 @@ th{
 }
 td{
     text-align: center;
-} */
-
-
-/* .modal{ */
-  /* display:flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 1px; */
-  /* width: 350px;
-    background-color: white;
-    border: 1px solid rgb(103, 102, 102);
-    padding: 22px; */
-    /* justify-content: space-around; */
-    /* margin: 20vh;
-    border-radius: 1ch; 
 }
-.otpp{
-  display: flex;
-  font-size: 20px;
-}
-#otpModal{
-  display: none;
-  justify-content: center;
-  align-items: center;
-  padding-top: 20px;
-  margin-top: 0px; */
-  /* background-color: #0c0c0d; */
-/* } */
+

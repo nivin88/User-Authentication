@@ -20,6 +20,13 @@ function validateForm(event) {
         nameError.textContent = '';
     }
 
+    if (nameInput !== "ebrain") {
+        nameError.textContent = "Username is invalid*";
+        isValid = false;
+    } else {
+        nameError.textContent = '';
+    }
+
     // Validate password
     if (passwordInput === "") {
         passwordError.textContent = "Password is required*";
@@ -30,12 +37,19 @@ function validateForm(event) {
     } else {
         passwordError.textContent = '';
     }
+    if (passwordInput !== "Ji#993te") {
+        passwordError.textContent = "Password is invalid*";
+        isValid = false;
+    } else {
+        passwordError.textContent = '';
+    }
 
     if (isValid) {
         const formData = {
             userName: nameInput,
             password: passwordInput
         };
+
         submitForm(formData);
     }
 }
@@ -117,6 +131,7 @@ async function sendOtp(data) {
             console.log("OTP Validation Successful:", result);
             alert("OTP validated successfully!");
             closeOtpModal();
+            window.location = "demo.html";
             document.getElementById('form').reset();
         } else {
             throw new Error("OTP validation failed");
